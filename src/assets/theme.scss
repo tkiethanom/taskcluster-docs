@@ -1,0 +1,153 @@
+@import "./custom-vars.scss";
+
+body{
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  background-color: $xdark-color;
+  color: $xlight-color
+}
+
+h1{
+  font-size: 34px;
+  color: $light-color;
+  font-weight: 600;
+  margin-bottom: $default-margin-bottom
+}
+h2{
+  font-size: 18px;
+  color: $primary-color;
+  font-weight: 400;
+  margin-bottom: $default-margin-bottom
+}
+h3{
+  font-size: 18px;
+  color: $xlight-color;
+  font-weight: 400;
+  margin-bottom: $default-margin-bottom
+}
+a{
+  color: $alternate-color;
+  text-decoration: underline;
+}
+a:hover{
+  color: $alternate-color;
+  text-decoration: none;
+}
+.popover{
+  border-radius: 0;
+  color: $xdark-color;
+}
+
+.btn{
+  padding: 10px 20px;
+  margin-right: 5px;
+  text-decoration: none;
+}
+.btn.btn-sm{
+  padding: 5px 10px;
+}
+.btn.btn-lg{
+  padding: 20px 40px;
+}
+.btn.btn-default{
+  color: $xdark-color;
+  background: $xlight-color;
+}
+.btn.btn-primary{
+  color: $white-color;
+  background: $primary-color;
+}
+.btn.pull-right{
+  margin-right: 0;
+  margin-left: 5px;
+}
+pre{
+  border: 0;
+  color: $xlight-color;
+  background-color: $medium-color;
+  border-radius: 0;
+  margin-bottom: 15px;
+}
+code, code.stable{
+  background-color: $light-color;
+  color: $xdark-color;
+
+  a{
+    color: $xdark-color;
+  }
+}
+code.experimental{
+  background-color: $status-color;
+  color: $xlight-color;
+
+  a{
+    color: $xlight-color;
+  }
+}
+code.deprecated{
+  background-color: $xlight-color;
+  color: $xdark-color;
+
+  a{
+    color: $xdark-color;
+  }
+}
+code.unknown{
+  background-color: $status-alternate-color;
+  color: $xlight-color;
+
+  a{
+    color: $xlight-color;
+  }
+}
+table{
+  thead{
+    tr{
+      th{
+        background-color: $primary-color;
+        color: $white-color;
+        border-color: $medium-color;
+      }
+    }
+  }
+  tbody{
+    tr{
+      td{
+        background-color: $dark-color;
+        border-color: $medium-color;
+      }
+    }
+  }
+}
+table.table-bordered{
+  thead tr th{
+    border-color: $light-color;
+  }
+  tbody tr td{
+    border-color: $light-color;
+  }
+}
+.docson .box{
+  background: $light-color !important;
+  color: $xdark-color !important;
+  border: 0 !important;
+
+  code{
+    background: $xdark-color;
+    color: $xlight-color !important;
+  }
+
+  .box-header{
+    background: $primary-color !important;
+    color: $white-color !important;
+
+    .box-title{
+      .box-name{
+        color: $white-color !important;
+      }
+      .box-description{
+        color: $white-color !important;
+      }
+    }
+  }
+}
