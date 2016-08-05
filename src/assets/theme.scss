@@ -128,7 +128,7 @@ table.table-bordered{
   }
 }
 .docson .box{
-  background: $light-color !important;
+  background: $xlight-color !important;
   color: $xdark-color !important;
   border: 0 !important;
 
@@ -150,4 +150,7 @@ table.table-bordered{
       }
     }
   }
+}
+.content hr{
+  border-color: $light-color;
 }
