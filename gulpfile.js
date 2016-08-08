@@ -14,6 +14,10 @@ var navlinks = require('./lib/navlinks');
 var makeRedirects = require('./lib/make-redirects');
 var s3 = require('./lib/s3');
 
+var sourcemaps = require('gulp-sourcemaps');
+var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
+
 // define streams creating each type of file
 function index() {
   return gulp
@@ -107,11 +111,13 @@ gulp.task('check', function() {
   return site();
 });
 
-gulp.task('webserver', function() {
+gulp.task('webserver', ['sass'], function() {
+  gulp.watch('src/assets/**/*.scss', ['sass']);
+
   return site().pipe(virtual_webserver({debug: true}));
 });
 
-gulp.task('publish', function() {
+gulp.task('publish', ['sass'], function() {
   var publisher = s3.makePublisher();
 
   return site()
@@ -122,3 +128,17 @@ gulp.task('publish', function() {
 });
 
 gulp.task('default', ['webserver']);
+
+gulp.task('sass', function() {
+  return gulp.src('src/assets/style.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass({
+      errLogToConsole: true,
+      outputStyle: 'expanded'
+    }).on('error', sass.logError))
+    .pipe(sourcemaps.write())
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions', '> 5%']
+    }))
+    .pipe(gulp.dest('src/assets'));
+});

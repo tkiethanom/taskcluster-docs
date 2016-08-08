@@ -1,0 +1,42 @@
+ul.toc {
+  padding-left: 0;
+}
+
+ul.toc li {
+  list-style-type: none;
+  color: $xlight-color;
+}
+
+ul.toc li span.active {
+  font-weight: 700;
+  color: $white-color;
+}
+
+ul.toc li a {
+  text-decoration: none;
+  display: block;
+}
+
+ul.toc li a:hover {
+  text-decoration: underline;
+}
+
+ul.toc li ul {
+  color: #777;
+  margin-bottom: 0;
+}
+
+ul.toc li ul li {
+  color: $xlight-color;
+  margin-top: 0.5em;
+  margin-left: 1em;
+  margin-bottom: 0;
+}
+
+ul.toc li ul li ul {
+  font-size: 0.9em;
+}
+
+ul.toc li ul li ul li {
+  margin-top: 0;
+}
